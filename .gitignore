@@ -1,0 +1,7 @@
+venv/
+.venv/
+.venv_langsmith/
+__pycache__/
+*.pyc
+.DS_Store
+.env
