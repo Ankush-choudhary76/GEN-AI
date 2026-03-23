@@ -3,7 +3,7 @@
 # from openai import OpenAI
 # client = OpenAI(
 #   base_url="https://openrouter.ai/api/v1",
-#   api_key="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",
+#   api_key="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",
 # )
 # completion = client.chat.completions.create(
 #   extra_headers={
@@ -26,7 +26,7 @@
 
 # llm = ChatOpenAI(
 #     base_url="https://openrouter.ai/api/v1",
-#     api_key="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",
+#     api_key="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",
 #     model="meta-llama/llama-3.3-70b-instruct:free"
 # )
 
@@ -45,7 +45,8 @@ load_dotenv()
 llm = ChatOpenAI(
     base_url="https://openrouter.ai/api/v1",
     api_key=os.getenv("OPENROUTER_API_KEY"),
-    model="meta-llama/llama-3.3-70b-instruct:free"
+    model="google/gemma-3-12b-it:free"
+
 )
 
 

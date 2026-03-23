@@ -1,14 +1,19 @@
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 from typing import TypedDict, Annotated, Optional, Literal
-
+import os
 load_dotenv()
 
-model = ChatOpenAI()
+
+model = ChatOpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key=os.getenv("OPENROUTER_API_KEY"),
+    model="google/gemma-3-12b-it:free"
+
+)
 
 # schema
 class Review(TypedDict):
-
     key_themes: Annotated[list[str], "Write down all the key themes discussed in the review in a list"]
     summary: Annotated[str, "A brief summary of the review"]
     sentiment: Annotated[Literal["pos", "neg"], "Return sentiment of the review either negative, positive or neutral"]
@@ -31,7 +36,11 @@ Stunning 200MP camera with incredible zoom capabilities
 Long battery life with fast charging
 S-Pen support is unique and useful
                                  
+<<<<<<< Updated upstream
 Review by Ankush Choudhary 
+=======
+Review by Ankush Choudhary
+>>>>>>> Stashed changes
 """)
 
 print(result['name'])
